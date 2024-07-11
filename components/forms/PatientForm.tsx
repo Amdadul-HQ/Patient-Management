@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import CoustomeFrom from "../ui/CoustomeFrom"
+import SubmitButton from "../ui/SubmitButton"
 
 export enum FormFieldType {
     INPUT= 'input',
@@ -62,7 +63,25 @@ const PatientForm=()=> {
         iconSrc ='/assets/icons/user.svg'
         iconAlt = 'user'
         />
-        <Button type="submit">Submit</Button>
+        <CoustomeFrom
+        fieldType={FormFieldType.INPUT}
+        control={form.control}
+        name='email'
+        label='Email'
+        placeholder='Jhondeo@gmail.com'
+        iconSrc ='/assets/icons/email.svg'
+        iconAlt = 'email'
+        />
+        <CoustomeFrom
+        fieldType={FormFieldType.PHONE_INPUT}
+        control={form.control}
+        name='phone'
+        label='Phone Number'
+        placeholder='017xxxxx0'
+        iconSrc ='/assets/icons/phone.svg'
+        iconAlt = 'phone'
+        />
+        <SubmitButton isLoading={isLoading} />
       </form>
     </Form>
     );
